@@ -19,4 +19,8 @@ export function validateMobileNumber(mobile) {
   return mobilePattern.test(mobile);
 }
 
+export function validatePassword(password) {
+  const passwordPattern = /^.{8,}$/;
+  return passwordPattern.test(password);
+}
   
