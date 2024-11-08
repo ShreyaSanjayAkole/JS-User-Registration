@@ -13,4 +13,10 @@ export function validateEmail(email) {
   const emailPattern = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2})?$/;
   return emailPattern.test(email);
 }
+
+export function validateMobileNumber(mobile) {
+  const mobilePattern = /^(\d{2})\s(\d{10})$/;
+  return mobilePattern.test(mobile);
+}
+
   
