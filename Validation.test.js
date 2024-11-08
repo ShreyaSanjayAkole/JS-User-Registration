@@ -1,4 +1,4 @@
-import { validateFirstName, validateLastName } from './Validation.js';
+import { validateFirstName, validateLastName, validateEmail,validateMobileNumber } from './Validation.js';
 
 
 test('Validates a correct first name', () => {
@@ -39,6 +39,22 @@ test('Invalidates email without mandatory parts', () => {
 
 test('Invalidates email with incorrect structure', () => {
   expect(validateEmail("abc@blco.in")).toBe(false);
+});
+
+test('Validates a correct mobile number format', () => {
+  expect(validateMobileNumber("91 9919819801")).toBe(true);
+});
+
+test('Invalidates a mobile number without space', () => {
+  expect(validateMobileNumber("919919819801")).toBe(false);
+});
+
+test('Invalidates a mobile number with incorrect country code', () => {
+  expect(validateMobileNumber("9 9919819801")).toBe(false);
+});
+
+test('Invalidates a mobile number with less than 10 digits', () => {
+  expect(validateMobileNumber("91 99198198")).toBe(false);
 });
 
 
