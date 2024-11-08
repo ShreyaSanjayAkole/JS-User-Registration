@@ -20,7 +20,7 @@ export function validateMobileNumber(mobile) {
 }
 
 export function validatePassword(password) {
-  const passwordPattern = /^.{8,}$/;
+  const passwordPattern = /^(?=.*[A-Z]).{8,}$/;
   return passwordPattern.test(password);
 }
   
