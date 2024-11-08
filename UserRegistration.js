@@ -32,7 +32,7 @@ const password = prompt("Enter Password");
 if(validatePassword(password)){
   console.log("Valid Password");
 }else{
-  console.log("Invalidates password with less than 8 characters");
+  console.log("Invalidates password");
 }
 
 window.validateFirstName = validateFirstName;
