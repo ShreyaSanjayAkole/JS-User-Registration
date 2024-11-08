@@ -57,20 +57,28 @@ test('Invalidates a mobile number with less than 10 digits', () => {
   expect(validateMobileNumber("91 99198198")).toBe(false);
 });
 
-test('Validates password with minimum 8 characters, one uppercase letter, and one numeric digit', () => {
-  expect(validatePassword("Password1")).toBe(true);
+test('Validates password with minimum 8 characters, one uppercase letter, one numeric digit, and exactly one special character', () => {
+  expect(validatePassword("Password1!")).toBe(true);
 });
 
 test('Invalidates password without uppercase letter', () => {
-  expect(validatePassword("password1")).toBe(false);
+  expect(validatePassword("password1!")).toBe(false);
 });
 
 test('Invalidates password without numeric digit', () => {
-  expect(validatePassword("Password")).toBe(false);
+  expect(validatePassword("Password!")).toBe(false);
 });
 
-test('Invalidates password with less than 8 characters even if it has an uppercase letter and a numeric digit', () => {
-  expect(validatePassword("Pass1")).toBe(false);
+test('Invalidates password with less than 8 characters even if it has an uppercase letter, numeric digit, and special character', () => {
+  expect(validatePassword("Pass1!")).toBe(false);
+});
+
+test('Invalidates password with more than one special character', () => {
+  expect(validatePassword("Password1!!")).toBe(false);
+});
+
+test('Invalidates password without special character', () => {
+  expect(validatePassword("Password123")).toBe(false);
 });
 
 
