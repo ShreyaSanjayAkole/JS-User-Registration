@@ -8,4 +8,9 @@ export function validateLastName(name){
   const regex = /^[A-Z][a-zA-Z]{2,}$/;
   return regex.test(name);
 }
+
+export function validateEmail(email) {
+  const emailPattern = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2})?$/;
+  return emailPattern.test(email);
+}
   
