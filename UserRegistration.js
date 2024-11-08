@@ -1,4 +1,4 @@
-import { validateEmail, validateFirstName, validateLastName, validateMobileNumber } from './Validation.js';
+import { validateEmail, validateFirstName, validateLastName, validateMobileNumber, validatePassword } from './Validation.js';
 
 const firstName = prompt("Enter your first name:");
 if (validateFirstName(firstName)) {
@@ -28,7 +28,15 @@ if(validateMobileNumber(phone)){
   console.log("Invalid phone number.");
 }
 
+const password = prompt("Enter Password");
+if(validatePassword(password)){
+  console.log("Valid Password");
+}else{
+  console.log("Invalidates password with less than 8 characters");
+}
+
 window.validateFirstName = validateFirstName;
 window.validateLastName = validateLastName;
 window.validateEmail = validateEmail;
 window.validateMobileNumber = validateMobileNumber;
+window.validatePassword = validatePassword;
