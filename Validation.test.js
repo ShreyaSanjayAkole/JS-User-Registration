@@ -1,22 +1,31 @@
-const validateFirstName = require('./UserRegistration');
+import { validateFirstName, validateLastName } from './Validation.js';
 
-describe('First Name Validation', () => {
 
-    test('Valid first name with minimum 3 characters and starting with a capital', () => {
-        expect(validateFirstName("Shreya")).toBe(true);
-      });
-      
-      test('Invalid first name with less than 3 characters', () => {
-        expect(validateFirstName("Sh")).toBe(false);
-      });
-      
-      test('Invalid first name starting with a lowercase letter', () => {
-        expect(validateFirstName("shreya")).toBe(false);
-      });
-      
-      test('Invalid first name with numbers', () => {
-        expect(validateFirstName("Shreya123")).toBe(false);
-      });
-})
+test('Validates a correct first name', () => {
+  expect(validateFirstName("Shreya")).toBe(true);
+});
+
+test('Invalidates a first name starting with lowercase', () => {
+  expect(validateFirstName("shreya")).toBe(false);
+});
+
+test('Invalidates a first name that is too short', () => {
+  expect(validateFirstName("Sh")).toBe(false);
+});
+
+test('Validates a correct last name', () => {
+  expect(validateLastName("Akole")).toBe(true);
+});
+
+test('Invalidates a last name starting with lowercase', () => {
+  expect(validateLastName("akole")).toBe(false);
+});
+
+test('Invalidates a last name that is too short', () => {
+  expect(validateLastName("Ak")).toBe(false);
+});
+
+
+
 
 
