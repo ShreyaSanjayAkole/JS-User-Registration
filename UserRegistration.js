@@ -39,4 +39,4 @@ window.validateFirstName = validateFirstName;
 window.validateLastName = validateLastName;
 window.validateEmail = validateEmail;
 window.validateMobileNumber = validateMobileNumber;
-window.validatePassword = validatePassword;
+window.validatePassword = validatePassword; 
