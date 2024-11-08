@@ -1,4 +1,4 @@
-import { validateEmail, validateFirstName, validateLastName } from './Validation.js';
+import { validateEmail, validateFirstName, validateLastName, validateMobileNumber } from './Validation.js';
 
 const firstName = prompt("Enter your first name:");
 if (validateFirstName(firstName)) {
@@ -21,6 +21,14 @@ if(validateEmail(email)){
   console.log("Invalid email id.");
 }
 
+const phone = prompt("Enter phone number(Mobile Format - E.g. 91 9919819801): ");
+if(validateMobileNumber(phone)){
+  console.log("valid phone number");
+}else{
+  console.log("Invalid phone number.");
+}
+
 window.validateFirstName = validateFirstName;
 window.validateLastName = validateLastName;
 window.validateEmail = validateEmail;
+window.validateMobileNumber = validateMobileNumber;
