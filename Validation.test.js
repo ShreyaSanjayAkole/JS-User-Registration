@@ -57,14 +57,17 @@ test('Invalidates a mobile number with less than 10 digits', () => {
   expect(validateMobileNumber("91 99198198")).toBe(false);
 });
 
-test('Validates password with minimum 8 characters', () => {
+test('Validates password with minimum 8 characters and at least one uppercase letter', () => {
   expect(validatePassword("Password")).toBe(true);
 });
 
-test('Invalidates password with less than 8 characters', () => {
-  expect(validatePassword("Pass")).toBe(false);
+test('Invalidates password without uppercase letter', () => {
+  expect(validatePassword("password")).toBe(false);
 });
 
+test('Invalidates password with less than 8 characters even if it has an uppercase letter', () => {
+  expect(validatePassword("Pass")).toBe(false);
+});
 
 
 
