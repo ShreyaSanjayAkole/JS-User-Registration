@@ -1,4 +1,4 @@
-import { validateFirstName, validateLastName } from './Validation.js';
+import { validateEmail, validateFirstName, validateLastName } from './Validation.js';
 
 const firstName = prompt("Enter your first name:");
 if (validateFirstName(firstName)) {
@@ -14,5 +14,13 @@ if (validateLastName(lastname)){
   console.log("Invalid last name. It must start with a capital letter and be at least 3 characters long.");
 }
 
+const email = prompt("Enter your email id: ");
+if(validateEmail(email)){
+  console.log("valid email id");
+}else{
+  console.log("Invalid email id.");
+}
+
 window.validateFirstName = validateFirstName;
 window.validateLastName = validateLastName;
+window.validateEmail = validateEmail;
