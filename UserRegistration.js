@@ -11,4 +11,4 @@ if (validateFirstName(firstName)) {
   console.log("Invalid first name. It must start with a capital letter and be at least 3 characters long.");
 }
 
-window.validateFirstName = validateFirstName;
+window.validateFirstName = validateFirstName;   
